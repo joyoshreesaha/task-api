@@ -1,11 +1,11 @@
 const Task = require('../models/taskModel');
 
 exports.getTasks = async (req,res) =>{
-    const tasks = await Task.findAll;
+    const tasks = await Task.findAll();
     res.json(tasks);
 };
 
 exports.createTask = async (req,res) =>{
     const id = await Task.create(req.body);
-    req.status(201).json({id});
+    res.status(201).json({id});
 };
